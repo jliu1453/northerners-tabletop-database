@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.northerners.mapper.impl.inventoryMiniMapper">
+    <insert id="insertMini" parameterType="com.northerners.dto.inventoryMini">
+        INSERT INTO inventory_Mini(inventory_Id, mini_Id) VALUES(#{inventoryId}, #{miniId})
+    </insert>
+
+    <select id="checkIfExist" parameterType="com.northerners.dto.inventoryMini"
+            resultType="com.northerners.dto.inventoryMini">
+        SELECT * FROM inventory_Mini im WHERE im.inventory_Id = #{inventoryId} AND im.mini_Id = #{miniId}
+    </select>
+
+    <delete id="deleteMini" parameterType="com.northerners.dto.inventoryMini">
+        DELETE FROM inventory_Mini im WHERE im.inventory_Id = #{inventoryId} AND im.mini_Id = #{miniId}
+    </delete>
+
+    <delete id="deleteAllMini" parameterType="int">
+        DELETE FROM inventory_Mini im WHERE im.inventory_Id = #{inventoryId}
+    </delete>
+</mapper>

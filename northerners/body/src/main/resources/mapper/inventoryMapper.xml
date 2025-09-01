@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.northerners.mapper.impl.inventoryMapper">
+    <select id="findAll" resultType = "com.northerners.model.inventory">
+        SELECT * FROM inventory
+    </select>
+
+    <select id="findById" parameterType = "int" resultType = "com.northerners.model.inventory">
+        SELECT * FROM inventory WHERE inventory_Id = #{id}
+    </select>
+
+    <select id ="findByUserId" parameterType="int" resultType="com.northerners.model.inventory">
+        SELECT * FROM inventory i WHERE i.user_Id = #{id}
+    </select>
+
+    <select id="getInventoryMini" resultType="com.northerners.model.mini">
+        SELECT
+        m.mini_Id AS miniId,
+        m.model_name AS miniName
+        FROM inventory_mini im
+        JOIN mini m ON im.mini_Id = m.mini_Id
+        WHERE im.inventory_Id = #{inventoryId}
+    </select>
+
+    <insert id="insert" parameterType = "com.northerners.model.inventory">
+        INSERT INTO inventory(user_Id) VALUES(#{userId})
+    </insert>
+
+
+    <update id="update" parameterType="com.northerners.model.inventory">
+        UPDATE inventory
+        SET user_Id = #{userId}
+        WHERE inventory_Id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM inventory WHERE inventory_Id = #{id}
+    </delete>
+</mapper>

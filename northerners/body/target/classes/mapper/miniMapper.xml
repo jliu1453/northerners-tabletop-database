@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.northerners.mapper.impl.miniMapper">
+    <select id="findAll" resultType = "com.northerners.model.mini">
+        SELECT * FROM mini
+    </select>
+
+    <select id="findById" parameterType = "int" resultType = "com.northerners.model.mini">
+        SELECT * FROM mini WHERE mini_Id = #{miniId}
+    </select>
+
+    <select id="findByMiniName" parameterType = "String" resultType="com.northerners.model.mini">
+        SELECT * FROM mini WHERE model_Name = #{name}
+    </select>
+
+    <select id="findByInventoryId" parameterType = "int" resultType="com.northerners.model.mini">
+        SELECT * FROM mini m LEFT JOIN inventory_Mini im on m.mini_Id = im.mini_id
+        WHERE im.inventory_Id = #{miniId}
+    </select>
+
+    <insert id="insert" parameterType = "com.northerners.model.mini" useGeneratedKeys="true" keyProperty="miniId">
+        INSERT INTO mini(model_Name, base_Size, points, faction) VALUES(#{modelName}, #{baseSize}, #{points}, #{faction})
+    </insert>
+
+    <update id="update" parameterType="com.northerners.model.mini">
+    UPDATE mini
+    SET model_Name = #{modelName}, base_Size = #{baseSize}, points = #{points}, faction = #{faction}
+    WHERE mini_Id = #{miniId}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM mini WHERE mini_Id = #{miniId}
+    </delete>
+</mapper>

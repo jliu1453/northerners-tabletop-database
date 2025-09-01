@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "com.northerners.mapper.impl.userMapper">
+
+    <select id="findAll" resultType="com.northerners.model.user" >
+        SELECT * FROM user
+    </select>
+
+    <select id="findById" parameterType="int" resultType="com.northerners.model.user">
+        SELECT * FROM user where user_Id = #{userId}
+    </select>
+
+    <select id="findByUserName" parameterType="String" resultType="com.northerners.model.user">
+        SELECT * FROM user where user_Name =#{name}
+    </select>
+
+    <insert id="insert" parameterType="com.northerners.model.user" useGeneratedKeys="true" keyProperty="userId">
+        INSERT INTO user(user_Name, password) VALUES(#{userName},#{password})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM user where user_Id = #{userId}
+    </delete>
+
+    <update id="update" parameterType="com.northerners.model.user">
+        UPDATE user
+        SET user_Name = #{userName}, password = #{password}
+        WHERE user_Id = #{userId}
+    </update>
+
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.northerners.mapper.impl.chapterMapper">
+    <select id="findAll" resultType = "com.northerners.model.chapter">
+        SELECT * FROM chapter
+    </select>
+
+    <select id="findById" parameterType = "int" resultType = "com.northerners.model.chapter">
+        SELECT * FROM chapter WHERE chapter_Id = #{chapterId}
+    </select>
+
+    <select id ="findByBookId" parameterType="int" resultType="com.northerners.model.chapter">
+        SELECT * FROM chapter c WHERE c.book_Id = #{bookId}
+    </select>
+
+    <select id="findByChapterName" parameterType="String" resultType="com.northerners.model.chapter">
+        SELECT * FROM chapter WHERE chapter_Name = #{chapterName}
+    </select>
+
+    <insert id="insert" parameterType = "com.northerners.model.chapter">
+        INSERT INTO chapter(book_Id, chapter_Name)
+        VALUES (#{bookId}, #{chapterName})
+    </insert>
+
+    <update id="update" parameterType="com.northerners.model.chapter">
+        UPDATE chapter
+        SET
+        book_Id = #{bookId},
+        chapter_Name = #{chapterName}
+        WHERE chapter_Id = #{chapterId}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM chapter WHERE chapter_Id = #{chapterId}
+    </delete>
+</mapper>

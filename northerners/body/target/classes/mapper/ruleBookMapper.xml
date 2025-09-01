@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.northerners.mapper.impl.ruleBookMapper">
+    <select id="findAll" resultType = "com.northerners.model.ruleBook">
+        SELECT * FROM ruleBook
+    </select>
+
+    <select id="findById" parameterType = "int" resultType = "com.northerners.model.ruleBook">
+        SELECT * FROM ruleBook WHERE book_Id = #{bookId}
+    </select>
+
+    <select id="findByBookName" parameterType = "string" resultType = "com.northerners.model.ruleBook">
+        SELECT * FROM ruleBook WHERE book_Name = #{bookName}
+    </select>
+
+    <insert id="insert" parameterType = "com.northerners.model.ruleBook" useGeneratedKeys="true" keyProperty="bookId">
+        INSERT INTO ruleBook(book_Name, version) VALUES(#{bookName}, #{version})
+    </insert>
+
+    <update id="update" parameterType="com.northerners.model.ruleBook">
+        UPDATE ruleBook
+        SET book_Name = #{bookName}, version = #{version}
+        WHERE book_Id = #{bookId}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM ruleBook WHERE book_Id = #{bookId}
+    </delete>
+</mapper>
