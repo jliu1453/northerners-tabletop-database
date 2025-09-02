@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class inventoryService {
     private final inventoryMapper inventoryMapper;
-    private final inventoryMiniMapper inventoryMiniMapper;
+    private final inventoryMiniMapper inventoryMiniMapper; //dto
 
     public inventoryService(inventoryMapper inventoryMapper, inventoryMiniMapper inventoryMiniMapper){
         this.inventoryMapper = inventoryMapper;
@@ -24,7 +24,7 @@ public class inventoryService {
 
         List<inventory> inventory = inventoryMapper.findAll();
         for(inventory temp :  inventory){
-            temp.setOwnedMinis(inventoryMapper.getInventoryMini(temp.getInventoryId()));
+            temp.setOwnedMinis(inventoryMapper.getInventoryMini(temp.getInventoryId())); //fetch sql for minis owned for each inventory entity
         }
         return inventory;
     }
@@ -32,7 +32,7 @@ public class inventoryService {
     public inventory findByUserId(int id){return inventoryMapper.findByUserId(id);}
 
     public int createInventory(inventory inventory){
-        if(inventoryMapper.findByUserId(inventory.getUserId()) != null){
+        if(inventoryMapper.findByUserId(inventory.getUserId()) != null){ //if user already have a inventory
             return 0;
         }
         else{
@@ -74,4 +74,5 @@ public class inventoryService {
         return inventoryMapper.delete(id);
     }
 }
+
 
