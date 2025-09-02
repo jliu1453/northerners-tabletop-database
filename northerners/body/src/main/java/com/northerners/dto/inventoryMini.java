@@ -1,3 +1,4 @@
+//dto file to handle inventory_mini junction table
 package com.northerners.dto;
 
 public class inventoryMini {
@@ -20,3 +21,4 @@ public class inventoryMini {
         this.miniId = miniId;
     }
 }
+
