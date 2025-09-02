@@ -1,3 +1,4 @@
+//service for chapter entity
 package com.northerners.service.impl;
 
 import com.northerners.mapper.impl.chapterMapper;
@@ -20,7 +21,7 @@ public class chapterService {
 
 
     public int createChapter(chapter chapter){
-        if(chapterMapper.findByChapterName(chapter.getChapterName()) != null){
+        if(chapterMapper.findByChapterName(chapter.getChapterName()) != null){ //check if already exist
             return 0;
         }
         else{
@@ -41,3 +42,4 @@ public class chapterService {
         return chapterMapper.delete(chapter.getChapterId());
     }
 }
+
