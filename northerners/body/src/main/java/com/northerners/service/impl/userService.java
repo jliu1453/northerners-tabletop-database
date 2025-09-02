@@ -1,3 +1,4 @@
+//service for user
 package com.northerners.service.impl;
 import com.northerners.mapper.impl.userMapper;
 import com.northerners.model.user;
@@ -47,3 +48,4 @@ public class userService{
     }
 
 }
+
