@@ -1,3 +1,4 @@
+//chapter entity, each book can have more than 1 chapter, all chapter have i book they owned by
 package com.northerners.model;
 import org.springframework.stereotype.Component;
 
@@ -39,5 +40,6 @@ public class chapter {
         this.chapterName = chapterName;
     }
 }
+
 
 
