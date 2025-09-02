@@ -1,11 +1,10 @@
 package com.northerners.model;
 import org.springframework.stereotype.Component;
 
-@Component //change, book HAS-A list of chapters
+@Component 
 public class chapter {
     private int bookId;
     private int chapterId;
-    private String text;
     private String chapterName;
 
     public int getChapterId(){
@@ -40,4 +39,5 @@ public class chapter {
         this.chapterName = chapterName;
     }
 }
+
 
