@@ -1,3 +1,5 @@
+//basic tests of services
+//recommand to test use postman api instead
 package com.northerners;
 
 import com.northerners.dto.inventoryMini;
