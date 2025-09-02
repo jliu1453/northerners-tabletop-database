@@ -1,3 +1,4 @@
+//user, own 1 inventory
 package com.northerners.model;
 import org.springframework.stereotype.Component;
 
@@ -40,3 +41,4 @@ public class user {
         this.userInvent = userInvent;
     }
 }
+
