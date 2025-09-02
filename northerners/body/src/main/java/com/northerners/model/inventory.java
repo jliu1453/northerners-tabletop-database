@@ -16,7 +16,7 @@ public class inventory {
 
     }
 
-    public inventory(int userId, List<mini> ownedMinis,){
+    public inventory(int userId, List<mini> ownedMinis){
         this.userId = userId;
         this.ownedMinis = ownedMinis;
     }
@@ -45,5 +45,6 @@ public class inventory {
         this.inventoryId = inventoryId;
     }
 }
+
 
 
