@@ -1,3 +1,4 @@
+//service for mini entity
 package com.northerners.service.impl;
 
 import com.northerners.mapper.impl.miniMapper;
@@ -43,3 +44,4 @@ public class miniService {
         return miniMapper.delete(mini.getMiniId());
     }
 }
+
