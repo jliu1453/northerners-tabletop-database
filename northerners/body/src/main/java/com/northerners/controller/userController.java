@@ -1,3 +1,4 @@
+//rest end point for user
 package com.northerners.controller;
 
 import com.northerners.model.inventory;
@@ -68,3 +69,4 @@ public class userController {
         return ResponseEntity.noContent().build();
     }
 }
+
