@@ -1,3 +1,4 @@
+//rest end point for mini
 package com.northerners.controller;
 
 import com.northerners.model.mini;
@@ -67,3 +68,4 @@ public class miniController {
         return ResponseEntity.noContent().build();
     }
 }
+
