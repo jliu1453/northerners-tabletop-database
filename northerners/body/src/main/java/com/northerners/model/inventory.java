@@ -1,3 +1,4 @@
+//inventory, each user have one and only one, each inventory can own one or more minis
 package com.northerners.model;
 import org.springframework.stereotype.Component;
 
@@ -8,17 +9,15 @@ public class inventory {
     private int userId;
     private int inventoryId;
     private List<mini> ownedMinis;
-    private List<ruleBook> ownedBooks;
 
 
     public inventory(){
 
     }
 
-    public inventory(int userId, List<mini> ownedMinis, List<ruleBook> ownedBooks){
+    public inventory(int userId, List<mini> ownedMinis,){
         this.userId = userId;
         this.ownedMinis = ownedMinis;
-        this.ownedBooks = ownedBooks;
     }
 
     public List<mini> getOwnedMinis() {
@@ -56,3 +55,4 @@ public class inventory {
         this.inventoryId = inventoryId;
     }
 }
+
