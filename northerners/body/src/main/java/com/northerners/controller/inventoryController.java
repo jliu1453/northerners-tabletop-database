@@ -1,3 +1,4 @@
+//rest end point for inventory
 package com.northerners.controller;
 
 import com.northerners.dto.inventoryMini;
@@ -66,3 +67,4 @@ public class inventoryController {
         }
     }
 }
+
