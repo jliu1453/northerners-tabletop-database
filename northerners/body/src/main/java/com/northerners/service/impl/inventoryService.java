@@ -1,3 +1,4 @@
+//service for inventory entity
 package com.northerners.service.impl;
 
 import com.northerners.dto.inventoryMini;
@@ -73,3 +74,4 @@ public class inventoryService {
         return inventoryMapper.delete(id);
     }
 }
+
