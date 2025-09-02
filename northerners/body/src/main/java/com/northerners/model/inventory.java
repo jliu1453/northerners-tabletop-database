@@ -1,4 +1,5 @@
 //inventory, each user have one and only one, each inventory can own one or more minis
+//current version does not support user to own rulebooks
 package com.northerners.model;
 import org.springframework.stereotype.Component;
 
@@ -28,20 +29,9 @@ public class inventory {
         return userId;
     }
 
-    public List<ruleBook> getOwnedBooks() {
-        return ownedBooks;
-    }
-
-
-    public void setOwnedBooks(List<ruleBook> ownedBooks) {
-        this.ownedBooks = ownedBooks;
-    }
-
     public void setOwnedMinis(List<mini> ownedMinis) {
         this.ownedMinis = ownedMinis;
     }
-
-
 
     public void setUserId(int userId) {
         this.userId = userId;
@@ -55,4 +45,5 @@ public class inventory {
         this.inventoryId = inventoryId;
     }
 }
+
 
