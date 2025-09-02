@@ -1,3 +1,4 @@
+//manage rest end points for rulebook, including insert a chapter to book
 package com.northerners.controller;
 
 import com.northerners.model.chapter;
@@ -86,3 +87,4 @@ public class ruleBookController {
         return ResponseEntity.noContent().build();
     }
 }
+
