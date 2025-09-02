@@ -1,3 +1,4 @@
+//book, can own 1 or more chapter
 package com.northerners.model;
 import org.springframework.stereotype.Component;
 
@@ -42,3 +43,4 @@ public class ruleBook {
         this.version = version;
     }
 }
+
