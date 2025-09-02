@@ -1,3 +1,4 @@
+//entity mini, has many to many relation with inventory
 package com.northerners.model;
 import org.springframework.stereotype.Component;
 
@@ -49,3 +50,4 @@ public class mini {
         this.miniId = miniId;
     }
 }
+
